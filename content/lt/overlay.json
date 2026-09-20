@@ -1,0 +1,17 @@
+{
+  "meta": {
+    "id": "lt",
+    "version": "0.1.0",
+    "extends": "core",
+    "notes": [
+      { "en": "Lithuanian sirens, information channels and shelter guidance.", "lt": "Lietuvos sirenos, informacijos kanalai ir slėptuvių gairės." }
+    ]
+  },
+  "emergencyNumbers": [
+    { "label": { "en": "Emergency (police, fire, ambulance)", "lt": "Bendrasis pagalbos numeris" }, "number": "112" },
+    { "label": { "en": "Emotional support line", "lt": "Emocinės paramos linija" }, "number": "1809" }
+  ],
+  "sources": [
+    { "id": "lt72", "name": "LT72 - Civil protection guidance for residents", "org": "Priešgaisrinės apsaugos ir gelbėjimo departamentas (PAGD)", "url": "https://lt72.lt/", "retrieved": "2026-09-20", "note": "Official Lithuanian 72-hour preparedness guidance." }
+  ]
+}

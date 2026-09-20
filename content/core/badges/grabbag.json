@@ -1,0 +1,26 @@
+{
+  "id": "grabbag", "order": 3, "status": "live", "icon": "backpack",
+  "name": { "en": "Grab bag ready", "lt": "Evakuacijos kuprinė" },
+  "tagline": { "en": "Out of the door in two minutes with what matters.", "lt": "Pro duris per dvi minutes su tuo, kas svarbu." },
+  "description": { "en": "A packed bag by the door for the day you are told to leave. Several items from your 72-hour kit already count - the bag is where they live.", "lt": "Sudėta kuprinė prie durų tai dienai, kai lieps išeiti. Keli daiktai iš jūsų 72 val. rinkinio jau įskaitomi - kuprinė yra jų vieta." },
+  "recommendedAfter": ["shelter72"],
+  "requiredFacts": ["household.people", "pets.list", "vehicles.list"],
+  "requirements": [
+    { "item": "bag.bag" },
+    { "item": "bag.water", "quantity": "household.size * 1" },
+    { "item": "bag.food" },
+    { "item": "bag.docs" },
+    { "item": "bag.clothes" },
+    { "item": "bag.hygiene" },
+    { "item": "light.torch" },
+    { "item": "power.bank" },
+    { "item": "health.firstaid" },
+    { "item": "health.meds", "when": "people.onMeds > 0", "quantity": "7" },
+    { "item": "bag.pet", "when": "pets.count > 0" },
+    { "item": "bag.kids", "when": "people.children > 0" },
+    { "item": "bag.location" },
+    { "item": "vehicle.fuel", "when": "vehicles.cars > 0", "optional": true },
+    { "item": "bag.whistle", "optional": true },
+    { "item": "bag.map", "optional": true }
+  ]
+}

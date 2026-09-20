@@ -1,0 +1,17 @@
+{
+  "id": "plan", "order": 7, "status": "stub", "icon": "map",
+  "name": { "en": "Household plan", "lt": "Namų ūkio planas" },
+  "tagline": { "en": "Everyone knows where to go and who to call.", "lt": "Visi žino, kur eiti ir kam skambinti." },
+  "description": { "en": "Coming soon in full. Costs nothing, takes an evening, and matters more than most of the gear.", "lt": "Netrukus pilna versija. Nieko nekainuoja, užtrunka vakarą ir reiškia daugiau nei dauguma įrangos." },
+  "recommendedAfter": ["grabbag"],
+  "requiredFacts": ["household.people", "pets.list"],
+  "requirements": [
+    { "item": "plan.meeting" },
+    { "item": "plan.contact" },
+    { "item": "plan.school", "when": "people.children > 0" },
+    { "item": "plan.pets_where", "when": "pets.count > 0" },
+    { "item": "kit.storage" },
+    { "item": "plan.neighbours", "optional": true },
+    { "item": "plan.print", "optional": true }
+  ]
+}

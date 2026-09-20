@@ -1,0 +1,18 @@
+{
+  "id": "outage", "order": 5, "status": "stub", "icon": "snowflake",
+  "name": { "en": "Winter outage", "lt": "Žiemos atjungimas" },
+  "tagline": { "en": "The most likely emergency of all: no power, no heat, minus fifteen.", "lt": "Labiausiai tikėtina nelaimė: nėra elektros, nėra šilumos, minus penkiolika." },
+  "description": { "en": "Coming soon in full. Heating of every kind depends on electricity. This badge is about staying warm and fed for days in a cold flat.", "lt": "Netrukus pilna versija. Bet koks šildymas priklauso nuo elektros. Šis ženkliukas - apie tai, kaip dienų dienas išlikti šiltam ir sočiam šaltame bute." },
+  "recommendedAfter": ["shelter72"],
+  "requiredFacts": ["household.people", "home.type", "home.heating", "home.cooking"],
+  "requirements": [
+    { "item": "heat.blankets" },
+    { "item": "heat.warm_room" },
+    { "item": "light.torch" },
+    { "item": "power.bank" },
+    { "item": "food.shelf", "quantity": "3" },
+    { "item": "cooking.stove", "when": "home.cooking == 'electric'", "optional": true },
+    { "item": "heat.co_alarm", "optional": true },
+    { "item": "light.candles", "optional": true }
+  ]
+}

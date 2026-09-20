@@ -1,0 +1,43 @@
+[
+  { "id": "siren", "order": 1, "icon": "siren", "source": { "id": "lt72", "section": "sirens" },
+    "title": { "en": "I hear a siren", "lt": "Girdžiu sireną" },
+    "steps": [
+      { "en": "Go indoors. Take people and pets with you.", "lt": "Eikite į vidų. Pasiimkite žmones ir augintinius." },
+      { "en": "Turn on the national broadcaster on radio or TV.", "lt": "Įsijunkite LRT radiją arba televiziją." },
+      { "en": "Check your phone for the official alert message.", "lt": "Patikrinkite telefone oficialų įspėjimo pranešimą." },
+      { "en": "Do the action the message says. Do not call 112 to ask what is happening.", "lt": "Darykite tai, kas nurodyta pranešime. Neskambinkite 112 klausti, kas vyksta." }
+    ] },
+  { "id": "air", "order": 2, "icon": "drone", "source": { "id": "lt72", "section": "air" },
+    "title": { "en": "Air attack warning", "lt": "Įspėjimas apie oro ataką" },
+    "steps": [
+      { "en": "Go to your shelter if it is under 5 minutes away. Otherwise, use your building's safest spot.", "lt": "Eikite į slėptuvę, jei ji arčiau nei 5 minutės. Kitaip - į saugiausią vietą pastate." },
+      { "en": "Lowest floor, interior room, away from windows. Two walls between you and outside.", "lt": "Žemiausias aukštas, vidinė patalpa, toliau nuo langų. Dvi sienos tarp jūsų ir lauko." },
+      { "en": "Stay until the all-clear is announced. Keep the radio on.", "lt": "Likite, kol paskelbs atšaukimą. Laikykite radiją įjungtą." },
+      { "en": "Afterwards: do not touch debris. Keep 100 m away and call 112.", "lt": "Po to: nelieskite nuolaužų. Laikykitės 100 m atstumu ir skambinkite 112." }
+    ] },
+  { "id": "power", "order": 3, "icon": "power", "source": { "id": "lt72", "section": "heat" },
+    "title": { "en": "Power is out", "lt": "Dingo elektra" },
+    "steps": [
+      { "en": "Fill bottles, pots and the bath with water now, while there is pressure.", "lt": "Pripilkite butelius, puodus ir vonią vandens dabar, kol yra slėgis." },
+      { "en": "Switch phones to low-power mode. Charge from your power bank only when needed.", "lt": "Įjunkite telefonų energijos taupymo režimą. Kraukite iš išorinės baterijos tik kai reikia." },
+      { "en": "Keep the fridge and freezer closed. A closed freezer stays cold for about two days.", "lt": "Neatidarinėkite šaldytuvo ir šaldiklio. Uždarytas šaldiklis šaltas išlieka apie dvi dienas." },
+      { "en": "If it is cold: pick one small room, close its doors, layer up, everyone together.", "lt": "Jei šalta: pasirinkite vieną mažą kambarį, uždarykite duris, apsirenkite sluoksniais, visi kartu." },
+      { "en": "Never run a stove, barbecue or generator indoors.", "lt": "Niekada nenaudokite viryklės, kepsninės ar generatoriaus patalpoje." }
+    ] },
+  { "id": "radiation", "order": 4, "icon": "radiation", "source": { "id": "lt72", "section": "radiation" },
+    "title": { "en": "Radiation warning", "lt": "Radiacinis įspėjimas" },
+    "steps": [
+      { "en": "Go inside and stay inside. Close windows, doors and ventilation.", "lt": "Eikite į vidų ir likite. Uždarykite langus, duris ir ventiliaciją." },
+      { "en": "If you were outside: remove outer clothing, bag it, shower with soap.", "lt": "Jei buvote lauke: nusivilkite viršutinius drabužius, sudėkite į maišą, nusiprauskite su muilu." },
+      { "en": "Take iodine tablets only when officials tell you to, at the dose on the leaflet.", "lt": "Jodo tabletes gerkite tik kai nurodo pareigūnai, doze pagal lapelį." },
+      { "en": "Stay tuned. Do not evacuate unless instructed - being indoors is the protection.", "lt": "Klausykite. Nesievakuokite, kol nenurodyta - buvimas patalpoje ir yra apsauga." }
+    ] },
+  { "id": "evacuate", "order": 5, "icon": "backpack", "source": { "id": "lt72", "section": "evacuation" },
+    "title": { "en": "Told to evacuate", "lt": "Liepta evakuotis" },
+    "steps": [
+      { "en": "Take your grab bag, documents, medication, pets.", "lt": "Pasiimkite evakuacijos kuprinę, dokumentus, vaistus, augintinius." },
+      { "en": "Turn off gas, water and electricity if told to. Lock the door.", "lt": "Išjunkite dujas, vandenį ir elektrą, jei nurodyta. Užrakinkite duris." },
+      { "en": "Go to the assembly point or route the authorities announce. Not your own idea of a shortcut.", "lt": "Vykite į institucijų nurodytą susirinkimo vietą ar maršrutu. Ne savo sugalvotu trumpesniu keliu." },
+      { "en": "Message your out-of-area contact once. Then save your battery.", "lt": "Vieną kartą parašykite kontaktui kitame regione. Tada taupykite bateriją." }
+    ] }
+]

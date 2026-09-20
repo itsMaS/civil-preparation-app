@@ -1,0 +1,61 @@
+[
+  {
+    "id": "person",
+    "label": { "en": "Household member", "lt": "Namų ūkio narys" },
+    "labelPlural": { "en": "Household", "lt": "Namų ūkis" },
+    "nameField": "name",
+    "cast": "person",
+    "fields": [
+      { "id": "name", "kind": "text", "group": "household", "question": { "en": "What should we call them?", "lt": "Kaip juos vadinsime?" }, "placeholder": { "en": "Name or nickname", "lt": "Vardas arba pravardė" } },
+      { "id": "age", "kind": "single", "group": "household", "critical": true, "question": { "en": "Age group", "lt": "Amžiaus grupė" }, "options": [
+        { "value": "infant", "label": { "en": "Under 2", "lt": "Iki 2 metų" } },
+        { "value": "child", "label": { "en": "2 to 12", "lt": "2-12 metų" } },
+        { "value": "teen", "label": { "en": "13 to 17", "lt": "13-17 metų" } },
+        { "value": "adult", "label": { "en": "18 to 64", "lt": "18-64 metų" } },
+        { "value": "senior", "label": { "en": "65 or older", "lt": "65 metų ir vyresni" } }
+      ] },
+      { "id": "meds", "kind": "boolean", "group": "health", "sensitive": true, "volatileMonths": 12, "question": { "en": "Takes medication regularly?", "lt": "Reguliariai vartoja vaistus?" }, "help": { "en": "Prescription medicine, insulin, inhalers. We use this only to size your medicine supply.", "lt": "Receptiniai vaistai, insulinas, inhaliatoriai. Naudojame tik vaistų atsargos dydžiui apskaičiuoti." } },
+      { "id": "mobility", "kind": "boolean", "group": "health", "sensitive": true, "question": { "en": "Needs help to move or evacuate?", "lt": "Reikia pagalbos judant ar evakuojantis?" } },
+      { "id": "diet", "kind": "boolean", "group": "health", "sensitive": true, "question": { "en": "Special diet or food allergies?", "lt": "Speciali dieta ar maisto alergijos?" }, "help": { "en": "Coeliac, diabetic, severe allergies, baby formula.", "lt": "Celiakija, diabetas, sunkios alergijos, kūdikių mišiniai." } }
+    ]
+  },
+  {
+    "id": "pet",
+    "label": { "en": "Pet", "lt": "Augintinis" },
+    "labelPlural": { "en": "Pets", "lt": "Augintiniai" },
+    "nameField": "name",
+    "cast": "pet",
+    "fields": [
+      { "id": "name", "kind": "text", "group": "pets", "question": { "en": "Pet's name", "lt": "Augintinio vardas" }, "placeholder": { "en": "Name", "lt": "Vardas" } },
+      { "id": "species", "kind": "single", "group": "pets", "critical": true, "question": { "en": "What kind of animal?", "lt": "Koks gyvūnas?" }, "options": [
+        { "value": "dog", "label": { "en": "Dog", "lt": "Šuo" } },
+        { "value": "cat", "label": { "en": "Cat", "lt": "Katė" } },
+        { "value": "small", "label": { "en": "Small (rabbit, hamster, bird)", "lt": "Smulkus (triušis, žiurkėnas, paukštis)" } },
+        { "value": "other", "label": { "en": "Other", "lt": "Kita" } }
+      ] },
+      { "id": "size", "kind": "single", "group": "pets", "when": "this.species == 'dog'", "question": { "en": "How big?", "lt": "Kokio dydžio?" }, "options": [
+        { "value": "small", "label": { "en": "Small (under 10 kg)", "lt": "Mažas (iki 10 kg)" } },
+        { "value": "medium", "label": { "en": "Medium (10 to 25 kg)", "lt": "Vidutinis (10-25 kg)" } },
+        { "value": "large", "label": { "en": "Large (over 25 kg)", "lt": "Didelis (virš 25 kg)" } }
+      ] },
+      { "id": "meds", "kind": "boolean", "group": "pets", "volatileMonths": 12, "question": { "en": "Needs regular medication?", "lt": "Reikia reguliarių vaistų?" } }
+    ]
+  },
+  {
+    "id": "vehicle",
+    "label": { "en": "Vehicle", "lt": "Transporto priemonė" },
+    "labelPlural": { "en": "Vehicles", "lt": "Transportas" },
+    "nameField": "kind",
+    "fields": [
+      { "id": "kind", "kind": "single", "group": "vehicles", "critical": true, "question": { "en": "What kind of vehicle?", "lt": "Kokia transporto priemonė?" }, "options": [
+        { "value": "car", "label": { "en": "Car or van", "lt": "Automobilis" } },
+        { "value": "motorbike", "label": { "en": "Motorbike or scooter", "lt": "Motociklas ar paspirtukas" } },
+        { "value": "bike", "label": { "en": "Bicycle", "lt": "Dviratis" } }
+      ] },
+      { "id": "fuel", "kind": "single", "group": "vehicles", "when": "this.kind == 'car'", "question": { "en": "How full is the tank, usually?", "lt": "Kiek paprastai būna kuro bake?" }, "help": { "en": "Fuel stations need electricity to pump. Half a tank is the common advice.", "lt": "Degalinėms reikia elektros. Įprastas patarimas - laikyti bent pusę bako." }, "options": [
+        { "value": "half_plus", "label": { "en": "Usually above half", "lt": "Paprastai daugiau nei pusė" } },
+        { "value": "low", "label": { "en": "Often near empty", "lt": "Dažnai beveik tuščias" } }
+      ] }
+    ]
+  }
+]

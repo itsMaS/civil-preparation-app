@@ -1,0 +1,15 @@
+{
+  "id": "alerts", "order": 1, "status": "live", "icon": "radio",
+  "name": { "en": "Alerts ready", "lt": "Pasiruošęs įspėjimams" },
+  "tagline": { "en": "You will hear the warning, and know what it means.", "lt": "Išgirsite įspėjimą ir žinosite, ką jis reiškia." },
+  "description": { "en": "The fastest badge. Most of it costs nothing: settings on your phone and a few facts in your head. It is the foundation for every other badge, because every plan starts with knowing something is happening.", "lt": "Greičiausias ženkliukas. Didžioji dalis nieko nekainuoja: telefono nustatymai ir keli faktai galvoje. Tai pamatas visiems kitiems ženkliukams - kiekvienas planas prasideda nuo žinojimo, kad kažkas vyksta." },
+  "requiredFacts": ["household.people", "home.type"],
+  "requirements": [
+    { "item": "alerts.cell_broadcast" },
+    { "item": "alerts.siren_signals" },
+    { "item": "alerts.info_channels" },
+    { "item": "alerts.radio" },
+    { "item": "alerts.batteries" },
+    { "item": "alerts.text_112", "optional": true }
+  ]
+}

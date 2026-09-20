@@ -1,0 +1,6 @@
+[
+  { "id": "lt72", "name": "LT72 - Civil protection guidance for residents", "org": "Priešgaisrinės apsaugos ir gelbėjimo departamentas (PAGD)", "url": "https://lt72.lt/", "retrieved": "2026-09-20", "note": "Official Lithuanian 72-hour preparedness guidance. Section anchors are indicative; verify before public launch." },
+  { "id": "pagd_shelters", "name": "Official shelter and cover map", "org": "PAGD", "url": "https://lt72.lt/", "retrieved": "2026-09-20", "note": "Map of shelters (slėptuvės) and covers (priedangos). Endpoint for the in-app dataset to be confirmed." },
+  { "id": "redcross", "name": "First aid kit contents", "org": "Lietuvos Raudonasis Kryžius", "url": "https://www.redcross.lt/", "retrieved": "2026-09-20" },
+  { "id": "who_iodine", "name": "Iodine thyroid blocking: guidelines for use in planning and responding to radiological and nuclear emergencies", "org": "World Health Organization", "url": "https://www.who.int/publications/i/item/9789241550185", "retrieved": "2026-09-20" }
+]

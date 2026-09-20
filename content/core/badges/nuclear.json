@@ -1,0 +1,15 @@
+{
+  "id": "nuclear", "order": 6, "status": "stub", "icon": "radiation",
+  "name": { "en": "Radiation incident", "lt": "Radiacinis incidentas" },
+  "tagline": { "en": "Go in, stay in, tune in. Iodine only when told.", "lt": "Eik į vidų, lik viduje, klausyk. Jodas - tik kai lieps." },
+  "description": { "en": "Coming soon in full. A nuclear power plant sits close to the border. The good news: the right response is mostly staying indoors, and the one thing to buy is cheap.", "lt": "Netrukus pilna versija. Atominė elektrinė stovi prie pat sienos. Gera žinia: teisinga reakcija - daugiausia likti patalpoje, o vienintelis pirkinys pigus." },
+  "recommendedAfter": ["shelter72"],
+  "requiredFacts": ["household.people", "home.type"],
+  "requirements": [
+    { "item": "nuclear.iodine" },
+    { "item": "nuclear.seal_room" },
+    { "item": "alerts.radio" },
+    { "item": "water.drinking", "quantity": "3 * household.size * 3" },
+    { "item": "food.shelf", "quantity": "3" }
+  ]
+}

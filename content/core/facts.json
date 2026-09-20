@@ -1,0 +1,64 @@
+[
+  { "id": "household.people", "kind": "entityList", "entity": "person", "group": "household", "minInstances": 1, "critical": true,
+    "question": { "en": "Who is in your household?", "lt": "Kas gyvena jūsų namų ūkyje?" },
+    "gate": { "en": "Does anyone else live with you?", "lt": "Ar kas nors dar gyvena kartu su jumis?" },
+    "more": { "en": "Add another household member?", "lt": "Pridėti dar vieną namų ūkio narį?" },
+    "help": { "en": "Start with yourself. Water, food and medicine are sized per person.", "lt": "Pradėkite nuo savęs. Vanduo, maistas ir vaistai skaičiuojami kiekvienam asmeniui." } },
+  { "id": "pets.list", "kind": "entityList", "entity": "pet", "group": "pets",
+    "question": { "en": "Pets", "lt": "Augintiniai" },
+    "gate": { "en": "Do you have any pets?", "lt": "Ar turite augintinių?" },
+    "more": { "en": "Add another pet?", "lt": "Pridėti dar vieną augintinį?" } },
+  { "id": "home.type", "kind": "single", "group": "home", "critical": true,
+    "question": { "en": "Where do you live?", "lt": "Kur gyvenate?" },
+    "options": [
+      { "value": "apartment", "label": { "en": "Apartment", "lt": "Bute" } },
+      { "value": "house", "label": { "en": "House", "lt": "Name" } },
+      { "value": "other", "label": { "en": "Something else (dorm, shared)", "lt": "Kitur (bendrabutis, nuoma su kitais)" } }
+    ] },
+  { "id": "home.floor", "kind": "number", "group": "home", "when": "home.type == 'apartment'", "min": 0, "max": 40,
+    "question": { "en": "Which floor?", "lt": "Kuriame aukšte?" }, "unit": { "en": "floor", "lt": "aukštas" },
+    "help": { "en": "Ground floor is 0. Higher floors lose water pressure first in an outage and are harder to carry supplies to.", "lt": "Pirmas aukštas - 0. Aukštesni aukštai pirmi netenka vandens slėgio ir į juos sunkiau nešti atsargas." } },
+  { "id": "home.lift", "kind": "boolean", "group": "home", "when": "home.type == 'apartment' && home.floor > 2",
+    "question": { "en": "Is there a lift?", "lt": "Ar yra liftas?" } },
+  { "id": "home.basement", "kind": "single", "group": "home",
+    "question": { "en": "Does your building have a basement or cellar you can access?", "lt": "Ar jūsų pastate yra rūsys, į kurį galite patekti?" },
+    "options": [
+      { "value": "yes", "label": { "en": "Yes", "lt": "Taip" } },
+      { "value": "locked", "label": { "en": "Yes, but usually locked", "lt": "Taip, bet paprastai užrakintas" } },
+      { "value": "no", "label": { "en": "No", "lt": "Ne" } },
+      { "value": "unknown", "label": { "en": "I don't know", "lt": "Nežinau" } }
+    ] },
+  { "id": "home.heating", "kind": "single", "group": "home", "critical": true,
+    "question": { "en": "How is your home heated?", "lt": "Kaip šildomas jūsų būstas?" },
+    "options": [
+      { "value": "district", "label": { "en": "District heating", "lt": "Centrinis šildymas" } },
+      { "value": "gas", "label": { "en": "Gas boiler", "lt": "Dujinis katilas" } },
+      { "value": "electric", "label": { "en": "Electric (heat pump, radiators)", "lt": "Elektra (šilumos siurblys, radiatoriai)" } },
+      { "value": "solid", "label": { "en": "Wood, pellets or coal", "lt": "Malkos, granulės ar anglis" } }
+    ],
+    "help": { "en": "Almost every heating system stops without electricity - even gas boilers need power for pumps.", "lt": "Beveik visos šildymo sistemos sustoja be elektros - net dujiniams katilams reikia elektros siurbliams." } },
+  { "id": "home.cooking", "kind": "single", "group": "home",
+    "question": { "en": "How do you cook?", "lt": "Kaip gaminate maistą?" },
+    "options": [
+      { "value": "electric", "label": { "en": "Electric only", "lt": "Tik elektra" } },
+      { "value": "gas", "label": { "en": "Gas", "lt": "Dujos" } },
+      { "value": "both", "label": { "en": "Both", "lt": "Abu" } }
+    ] },
+  { "id": "home.water", "kind": "single", "group": "home",
+    "question": { "en": "Where does your water come from?", "lt": "Iš kur gaunate vandenį?" },
+    "options": [
+      { "value": "municipal", "label": { "en": "City supply", "lt": "Miesto vandentiekis" } },
+      { "value": "well", "label": { "en": "Own well or pump", "lt": "Nuosavas šulinys ar siurblys" } }
+    ] },
+  { "id": "vehicles.list", "kind": "entityList", "entity": "vehicle", "group": "vehicles",
+    "question": { "en": "Vehicles", "lt": "Transportas" },
+    "gate": { "en": "Do you have a car, motorbike or bicycle?", "lt": "Ar turite automobilį, motociklą ar dviratį?" },
+    "more": { "en": "Add another vehicle?", "lt": "Pridėti dar vieną transporto priemonę?" } },
+
+  { "id": "plan.shelter", "kind": "text", "group": "plan", "question": { "en": "Your nearest shelter or cover", "lt": "Artimiausia slėptuvė ar priedanga" }, "placeholder": { "en": "Address or description", "lt": "Adresas ar aprašymas" } },
+  { "id": "plan.safeSpot", "kind": "text", "group": "plan", "question": { "en": "Safest spot in your building", "lt": "Saugiausia vieta jūsų pastate" }, "placeholder": { "en": "e.g. hallway, ground floor, no windows", "lt": "pvz. koridorius, pirmas aukštas, be langų" } },
+  { "id": "plan.meetingPoint", "kind": "text", "group": "plan", "question": { "en": "Household meeting point", "lt": "Namų ūkio susitikimo vieta" }, "placeholder": { "en": "Place everyone knows", "lt": "Vieta, kurią visi žino" } },
+  { "id": "plan.contact", "kind": "text", "group": "plan", "sensitive": true, "question": { "en": "Out-of-area contact", "lt": "Kontaktas kitame regione" }, "placeholder": { "en": "Name and phone", "lt": "Vardas ir telefonas" } },
+  { "id": "plan.kitLocation", "kind": "text", "group": "plan", "question": { "en": "Where your supplies are stored", "lt": "Kur laikomos atsargos" }, "placeholder": { "en": "e.g. hallway cupboard, bottom shelf", "lt": "pvz. koridoriaus spinta, apatinė lentyna" } },
+  { "id": "plan.bagLocation", "kind": "text", "group": "plan", "question": { "en": "Where your grab bag lives", "lt": "Kur laikoma evakuacijos kuprinė" }, "placeholder": { "en": "e.g. by the front door", "lt": "pvz. prie lauko durų" } }
+]

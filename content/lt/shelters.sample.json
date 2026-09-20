@@ -1,0 +1,11 @@
+{
+  "source": "SAMPLE DATA - replace with the official PAGD dataset. See src/shelters/fetch.ts.",
+  "fetchedAt": "2026-09-20T00:00:00Z",
+  "features": [
+    { "id": "s1", "name": "Priedanga - Gedimino pr. 9 (sample)", "kind": "cover", "address": "Gedimino pr. 9, Vilnius", "lat": 54.6872, "lng": 25.2797, "capacity": 200 },
+    { "id": "s2", "name": "Priedanga - Konstitucijos pr. 3 (sample)", "kind": "cover", "address": "Konstitucijos pr. 3, Vilnius", "lat": 54.6961, "lng": 25.2721, "capacity": 350 },
+    { "id": "s3", "name": "Slėptuvė - Kauno g. 15 (sample)", "kind": "shelter", "address": "Kauno g. 15, Vilnius", "lat": 54.6725, "lng": 25.2840, "capacity": 120 },
+    { "id": "s4", "name": "Priedanga - Laisvės al. 50 (sample)", "kind": "cover", "address": "Laisvės al. 50, Kaunas", "lat": 54.8972, "lng": 23.9120, "capacity": 300 },
+    { "id": "s5", "name": "Priedanga - Taikos pr. 20 (sample)", "kind": "cover", "address": "Taikos pr. 20, Klaipėda", "lat": 55.7033, "lng": 21.1443, "capacity": 250 }
+  ]
+}

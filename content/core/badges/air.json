@@ -1,0 +1,14 @@
+{
+  "id": "air", "order": 4, "status": "stub", "icon": "drone",
+  "name": { "en": "Air threat", "lt": "Grėsmė iš oro" },
+  "tagline": { "en": "Drones, missiles, debris: where to be and what not to touch.", "lt": "Dronai, raketos, nuolaužos: kur būti ir ko neliesti." },
+  "description": { "en": "Coming soon in full. The core actions are already here: know your shelter, know your building's safest spot, never touch debris.", "lt": "Netrukus pilna versija. Pagrindiniai veiksmai jau čia: žinokite savo slėptuvę, saugiausią vietą pastate, niekada nelieskite nuolaužų." },
+  "recommendedAfter": ["alerts"],
+  "requiredFacts": ["home.type", "home.floor", "home.basement"],
+  "requirements": [
+    { "item": "shelter.locate" },
+    { "item": "air.safe_spot" },
+    { "item": "air.debris" },
+    { "item": "alerts.cell_broadcast" }
+  ]
+}

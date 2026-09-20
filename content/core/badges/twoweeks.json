@@ -1,0 +1,20 @@
+{
+  "id": "twoweeks", "order": 8, "status": "stub", "icon": "calendar", "environment": "fortified",
+  "name": { "en": "Two weeks at home", "lt": "Dvi savaitės namuose" },
+  "tagline": { "en": "The long haul: water, food, heat and sanitation for 14 days.", "lt": "Ilgas laikotarpis: vanduo, maistas, šiluma ir sanitarija 14 dienų." },
+  "description": { "en": "Coming soon in full. Everything you stored for 72 hours already counts here - the targets just get bigger.", "lt": "Netrukus pilna versija. Viskas, ką sukaupėte 72 valandoms, čia jau įskaitoma - tik tikslai didesni." },
+  "recommendedAfter": ["outage"],
+  "requiredFacts": ["household.people", "pets.list", "home.type", "home.heating", "home.cooking"],
+  "requirements": [
+    { "item": "water.drinking", "quantity": "3 * household.size * 14" },
+    { "item": "water.pets", "when": "pets.count > 0", "quantity": "(pets.dogs * 1 + pets.cats * 0.3 + pets.small * 0.2) * 14" },
+    { "item": "food.shelf", "quantity": "14" },
+    { "item": "food.pets", "when": "pets.count > 0", "quantity": "14" },
+    { "item": "health.meds", "when": "people.onMeds > 0", "quantity": "30" },
+    { "item": "cooking.stove" },
+    { "item": "heat.co_alarm" },
+    { "item": "sanitation.toilet" },
+    { "item": "health.hygiene" },
+    { "item": "heat.blankets" }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "id": "shelter72", "order": 2, "status": "live", "icon": "home", "environment": "stocked",
+  "name": { "en": "72 hours at home", "lt": "72 valandos namuose" },
+  "tagline": { "en": "Three days with no power, water, shops or help.", "lt": "Trys dienos be elektros, vandens, parduotuvių ir pagalbos." },
+  "description": { "en": "Officials ask every household to cope on its own for 72 hours. Storms, grid failures and floods all look the same from inside a flat: the taps stop, the fridge warms, the phone dies. This badge covers the basics, sized to your household.", "lt": "Institucijos prašo kiekvieno namų ūkio išsiversti savarankiškai 72 valandas. Audros, elektros tinklo gedimai ir potvyniai iš buto atrodo vienodai: sustoja čiaupai, sušyla šaldytuvas, išsikrauna telefonas. Šis ženkliukas apima pagrindus, pritaikytus jūsų namų ūkiui." },
+  "recommendedAfter": ["alerts"],
+  "requiredFacts": ["household.people", "pets.list", "home.type", "home.floor", "home.lift", "home.heating"],
+  "requirements": [
+    { "item": "water.drinking", "quantity": "3 * household.size * 3" },
+    { "item": "water.pets", "when": "pets.count > 0", "quantity": "(pets.dogs * 1 + pets.cats * 0.3 + pets.small * 0.2) * 3" },
+    { "item": "food.shelf", "quantity": "3" },
+    { "item": "food.pets", "when": "pets.count > 0", "quantity": "3" },
+    { "item": "food.infant", "when": "people.infants > 0", "quantity": "3" },
+    { "item": "food.special", "when": "people.specialDiet > 0", "quantity": "3" },
+    { "item": "light.torch" },
+    { "item": "power.bank" },
+    { "item": "health.firstaid" },
+    { "item": "health.meds", "when": "people.onMeds > 0", "quantity": "7" },
+    { "item": "health.pet_meds", "when": "pets.onMeds > 0", "quantity": "7" },
+    { "item": "cash.small" },
+    { "item": "docs.copies" },
+    { "item": "kit.storage" },
+    { "item": "heat.blankets", "optional": true },
+    { "item": "health.hygiene", "optional": true },
+    { "item": "water.purify", "optional": true },
+    { "item": "water.carry_plan", "when": "home.type == 'apartment' && home.floor > 2 && !home.lift", "optional": true },
+    { "item": "light.candles", "optional": true }
+  ]
+}
