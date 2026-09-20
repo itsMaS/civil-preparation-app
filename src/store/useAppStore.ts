@@ -3,7 +3,7 @@ import { pack } from '@/content';
 import { buildBadgeViews } from '@/engine/checklist';
 import { emptyUserData, migrateUserData, type MigrationResult } from '@/engine/migrate';
 import { newId } from '@/engine/profile';
-import type { AvatarLook, EntityInstance, FactValue, ItemState, Locale, UserData } from '@/engine/types';
+import type { EntityInstance, FactValue, ItemState, Locale, UserData } from '@/engine/types';
 import { createRepository, type Repository } from '@/data/repository';
 
 export interface Toast { id: number; text: string; kind?: 'info' | 'success' }
@@ -30,7 +30,6 @@ interface AppState {
 
   setLocale(locale: Locale): void;
   setTheme(theme: 'dark' | 'light'): void;
-  setAvatar(look: Partial<AvatarLook>): void;
   setOnboarded(): void;
   dismissMigration(): void;
   dismissCelebration(): void;
@@ -90,7 +89,7 @@ export const useAppStore = create<AppState>((set, get) => ({
     }
     const result = migrateUserData(stored, pack);
     if (result.changed) await repo.save(result.data);
-    set({ data: result.data, ready: true, migration: result.changed ? result : null });
+    set({ data: result.data, ready: true, migration: result.packChanged ? result : null });
   },
 
   update(fn) {
@@ -143,7 +142,6 @@ export const useAppStore = create<AppState>((set, get) => ({
 
   setLocale(locale) { get().update((d) => { d.profile.locale = locale; }); },
   setTheme(theme) { get().update((d) => { d.profile.theme = theme; }); },
-  setAvatar(look) { get().update((d) => { d.profile.avatar = { ...d.profile.avatar, ...look }; }); },
   setOnboarded() { get().update((d) => { d.onboarded = true; }); },
   dismissMigration() { set({ migration: null }); },
   dismissCelebration() { set({ celebration: null }); },

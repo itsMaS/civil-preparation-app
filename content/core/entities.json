@@ -6,7 +6,7 @@
     "nameField": "name",
     "cast": "person",
     "fields": [
-      { "id": "name", "kind": "text", "group": "household", "question": { "en": "What should we call them?", "lt": "Kaip juos vadinsime?" }, "placeholder": { "en": "Name or nickname", "lt": "Vardas arba pravardė" } },
+      { "id": "name", "kind": "text", "group": "household", "question": { "en": "Name", "lt": "Vardas" }, "help": { "en": "Only you see it, to tell household members apart.", "lt": "Matoma tik jums, kad atskirtumėte namiškius." }, "placeholder": { "en": "Name or nickname", "lt": "Vardas arba pravardė" } },
       { "id": "age", "kind": "single", "group": "household", "critical": true, "question": { "en": "Age group", "lt": "Amžiaus grupė" }, "options": [
         { "value": "infant", "label": { "en": "Under 2", "lt": "Iki 2 metų" } },
         { "value": "child", "label": { "en": "2 to 12", "lt": "2-12 metų" } },

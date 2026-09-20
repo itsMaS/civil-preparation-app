@@ -97,8 +97,6 @@
     "affects_other": "Changing this updates {{count}} badges",
     "myPlan": "My plan",
     "myPlanHint": "Everything your household needs to know, on one screen. Screenshot it or print it.",
-    "avatar": "Your avatar",
-    "skin": "Skin", "hair": "Hair", "body": "Body",
     "theme": "Theme", "dark": "Dark", "light": "Light",
     "language": "Language"
   },
@@ -154,9 +152,29 @@
     "title": "Three days on your own.",
     "body": "Storms, blackouts, worse. Officials ask every household to cope for 72 hours without help. Most cannot. This app gets you there, one badge at a time.",
     "privacy": "Everything you enter stays on this phone. No account, no server, no tracking.",
-    "cta": "Let's start",
-    "pickLook": "Pick your look",
-    "next": "Next"
+    "cta": "Let's start"
+  },
+  "avatar": {
+    "label": "Your household"
+  },
+  "install": {
+    "title": "Install the app",
+    "body": "It works best installed on your phone, like a regular app.",
+    "why": {
+      "offline": "Works with no internet, even when the network is down.",
+      "homescreen": "Opens from your home screen in one tap.",
+      "noStore": "No app store, no account, a few megabytes."
+    },
+    "install": "Install",
+    "notNow": "Not now",
+    "banner": "Install so it works offline.",
+    "aboutHint": "The installed app works offline and opens from your home screen.",
+    "ios": {
+      "share": "In Safari, tap Share at the bottom (the square with an arrow).",
+      "add": "Choose \"Add to Home Screen\".",
+      "confirm": "Tap Add. The app appears with your other apps."
+    },
+    "manual": "In your browser menu choose \"Install app\" or \"Add to Home screen\"."
   },
   "update": {
     "available": "Updated guidance available",

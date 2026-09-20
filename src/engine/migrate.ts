@@ -10,7 +10,10 @@ export interface BadgeChange {
 
 export interface MigrationResult {
   data: UserData;
+  /** Stored data needs saving (schema or pack version moved). */
   changed: boolean;
+  /** The content pack moved; worth telling the user what changed. */
+  packChanged: boolean;
   fromVersion: string;
   changes: BadgeChange[];
 }
@@ -42,6 +45,11 @@ export function migrateUserData(input: UserData, pack: ContentPack, now = new Da
   // Schema migrations (add cases as SCHEMA_VERSION grows).
   if (data.schemaVersion < 1) data = { ...data, schemaVersion: 1 };
   if (!data.profile.listsDone) data.profile = { ...data.profile, listsDone: {} };
+  if (data.schemaVersion < 2) {
+    // v2 dropped avatar customisation; the figure is a generic silhouette now.
+    const { avatar: _avatar, ...profile } = data.profile as typeof data.profile & { avatar?: unknown };
+    data = { ...data, schemaVersion: 2, profile };
+  }
   if (!data.milestones) data.milestones = [];
 
   const changes: BadgeChange[] = [];
@@ -58,7 +66,8 @@ export function migrateUserData(input: UserData, pack: ContentPack, now = new Da
   }
   data.badges = badges;
 
-  const changed = fromVersion !== pack.meta.version || data.schemaVersion !== input.schemaVersion;
+  const packChanged = fromVersion !== pack.meta.version;
+  const changed = packChanged || data.schemaVersion !== input.schemaVersion;
   data.packVersion = pack.meta.version;
-  return { data, changed, fromVersion, changes };
+  return { data, changed, packChanged, fromVersion, changes };
 }

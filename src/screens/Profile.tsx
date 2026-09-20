@@ -6,7 +6,6 @@ import type { EntityDef, EntityInstance, FactDef, FactGroup } from '@/engine/typ
 import { useDerived } from '@/hooks/useDerived';
 import { formatDate, useL } from '@/i18n';
 import { useAppStore } from '@/store/useAppStore';
-import { Avatar, BODY_TYPES, HAIR_STYLES, SKIN_TONES } from '@/avatar/Avatar';
 import { FactInput, factValueLabel } from '@/components/FactInput';
 import { Icon } from '@/components/Icon';
 import { PageHeader } from '@/components/Layout';
@@ -71,17 +70,6 @@ export function Profile() {
         <span className="flex-1 text-sm font-semibold">{t('profile.privacy')}</span>
         <Icon name="chevron" className="text-muted" />
       </button>
-
-      {/* Avatar + look */}
-      <section className="card overflow-hidden">
-        <Avatar look={d.data.profile.avatar} gear={d.gear} mood={d.mood} environment={d.environment} cast={d.cast} decayed={d.decayed} />
-        <div className="space-y-3 border-t border-border p-4">
-          <p className="label">{t('profile.avatar')}</p>
-          <div className="flex gap-2">{Object.entries(SKIN_TONES).map(([k, c]) => <button key={k} aria-label={k} aria-pressed={d.data.profile.avatar.skin === k} onClick={() => store.setAvatar({ skin: k })} className={`h-9 w-9 rounded-full border-4 ${d.data.profile.avatar.skin === k ? 'border-orange' : 'border-transparent'}`} style={{ background: c }} />)}</div>
-          <div className="flex flex-wrap gap-2">{HAIR_STYLES.map((h) => <button key={h} className="option w-auto min-h-0 px-3 py-1.5 text-sm" aria-pressed={d.data.profile.avatar.hair === h} onClick={() => store.setAvatar({ hair: h })}>{h}</button>)}</div>
-          <div className="flex flex-wrap gap-2">{BODY_TYPES.map((b) => <button key={b} className="option w-auto min-h-0 px-3 py-1.5 text-sm" aria-pressed={d.data.profile.avatar.body === b} onClick={() => store.setAvatar({ body: b })}>{b}</button>)}</div>
-        </div>
-      </section>
 
       {/* Entities */}
       {pack.entities.map((entity) => {

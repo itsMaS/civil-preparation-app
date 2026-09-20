@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { Avatar } from '@/avatar/Avatar';
 import { Icon } from '@/components/Icon';
+import { InstallBanner, InstallModal } from '@/pwa/InstallPrompt';
 import { IS_BETA } from '@/config';
 import { useL } from '@/i18n';
 import { useDerived } from '@/hooks/useDerived';
@@ -32,8 +33,11 @@ export function Home() {
         {IS_BETA && <span className="chip text-xs">{t('app.beta')}</span>}
       </div>
 
+      <InstallModal />
+      <InstallBanner />
+
       <section className="card overflow-hidden">
-        <Avatar look={d.data.profile.avatar} gear={d.gear} mood={d.mood} environment={d.environment} cast={d.cast} decayed={d.decayed} />
+        <Avatar gear={d.gear} mood={d.mood} environment={d.environment} cast={d.cast} decayed={d.decayed} interactive />
         <div className="border-t border-border p-4">
           <p className="text-lg font-bold">{headline}</p>
           <p className="text-muted">{t('home.readiness', { earned: earnedCount, total })}</p>
@@ -60,6 +64,28 @@ export function Home() {
           </ul>
         </section>
       )}
+
+      <section className="mt-5">
+        <h2 className="label mb-2">{t('home.todo')}</h2>
+        {d.todo.length === 0 ? (
+          <p className="card p-4 text-sm text-muted">{t('home.todoEmpty')}</p>
+        ) : (
+          <ul className="space-y-2">
+            {d.todo.map(({ entry, badges }) => (
+              <li key={entry.item.id}>
+                <Link to={`/badge/${badges[0].id}`} className="card flex items-center gap-3 p-3">
+                  <span className="h-5 w-5 shrink-0 rounded-md border-2 border-border" aria-hidden />
+                  <div className="min-w-0 flex-1">
+                    <p className="truncate text-sm font-semibold">{L(entry.item.name)}{entry.target !== null && <span className="text-muted"> · {entry.target} {L(entry.item.unit)}</span>}</p>
+                    <p className="text-xs text-muted">{t('home.forBadges', { count: badges.length })}</p>
+                  </div>
+                  <Icon name="chevron" className="text-muted" />
+                </Link>
+              </li>
+            ))}
+          </ul>
+        )}
+      </section>
 
       <section className="mt-5">
         <h2 className="label mb-2">{t('home.badges')}</h2>
@@ -97,28 +123,6 @@ export function Home() {
             );
           })}
         </ul>
-      </section>
-
-      <section className="mt-5">
-        <h2 className="label mb-2">{t('home.todo')}</h2>
-        {d.todo.length === 0 ? (
-          <p className="card p-4 text-sm text-muted">{t('home.todoEmpty')}</p>
-        ) : (
-          <ul className="space-y-2">
-            {d.todo.map(({ entry, badges }) => (
-              <li key={entry.item.id}>
-                <Link to={`/badge/${badges[0].id}`} className="card flex items-center gap-3 p-3">
-                  <span className="h-5 w-5 shrink-0 rounded-md border-2 border-border" aria-hidden />
-                  <div className="min-w-0 flex-1">
-                    <p className="truncate text-sm font-semibold">{L(entry.item.name)}{entry.target !== null && <span className="text-muted"> · {entry.target} {L(entry.item.unit)}</span>}</p>
-                    <p className="text-xs text-muted">{t('home.forBadges', { count: badges.length })}</p>
-                  </div>
-                  <Icon name="chevron" className="text-muted" />
-                </Link>
-              </li>
-            ))}
-          </ul>
-        )}
       </section>
     </div>
   );

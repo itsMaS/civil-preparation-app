@@ -1,14 +1,13 @@
 import type { Context, Value } from './expr';
 import type { ContentPack, EntityInstance, FactRecord, FactValue, Profile } from './types';
 
-export const SCHEMA_VERSION = 1;
+export const SCHEMA_VERSION = 2;
 
 export function emptyProfile(locale: 'en' | 'lt' = 'lt'): Profile {
   return {
     facts: {},
     entities: {},
     listsDone: {},
-    avatar: { skin: 'medium', hair: 'short', body: 'average' },
     locale,
     theme: 'dark',
   };

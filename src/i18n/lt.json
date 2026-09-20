@@ -135,10 +135,6 @@
     "affects_other": "Pakeitus atsinaujins {{count}} ženkliukai",
     "myPlan": "Mano planas",
     "myPlanHint": "Viskas, ką turi žinoti jūsų namiškiai, viename ekrane. Nufotografuokite arba atsispausdinkite.",
-    "avatar": "Jūsų avataras",
-    "skin": "Oda",
-    "hair": "Plaukai",
-    "body": "Kūnas",
     "theme": "Tema",
     "dark": "Tamsi",
     "light": "Šviesi",
@@ -200,9 +196,29 @@
     "title": "Trys dienos savarankiškai.",
     "body": "Audros, elektros dingimas, blogiau. Institucijos prašo kiekvieno namų ūkio išsiversti 72 valandas be pagalbos. Dauguma negali. Ši programėlė jus ten nuves - po vieną ženkliuką.",
     "privacy": "Viskas, ką įvedate, lieka šiame telefone. Be paskyros, be serverio, be sekimo.",
-    "cta": "Pradėkime",
-    "pickLook": "Pasirinkite išvaizdą",
-    "next": "Toliau"
+    "cta": "Pradėkime"
+  },
+  "avatar": {
+    "label": "Jūsų namų ūkis"
+  },
+  "install": {
+    "title": "Įdiekite programėlę",
+    "body": "Geriausiai veikia įdiegta į telefoną - kaip įprasta programėlė.",
+    "why": {
+      "offline": "Veikia be interneto, net dingus ryšiui.",
+      "homescreen": "Atsidaro iš pradžios ekrano vienu paspaudimu.",
+      "noStore": "Be parduotuvės, be paskyros, užima kelis megabaitus."
+    },
+    "install": "Įdiegti",
+    "notNow": "Ne dabar",
+    "banner": "Įdiekite, kad veiktų be interneto.",
+    "aboutHint": "Įdiegta programėlė veikia be interneto ir atsidaro iš pradžios ekrano.",
+    "ios": {
+      "share": "Safari apačioje paspauskite „Bendrinti“ (kvadratas su rodykle).",
+      "add": "Pasirinkite „Pridėti į pradžios ekraną“.",
+      "confirm": "Paspauskite „Pridėti“. Programėlė atsiras tarp kitų."
+    },
+    "manual": "Naršyklės meniu pasirinkite „Įdiegti programėlę“ arba „Pridėti į pradžios ekraną“."
   },
   "update": {
     "available": "Yra atnaujintos gairės",

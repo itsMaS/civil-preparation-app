@@ -6,6 +6,7 @@ import { useDerived } from '@/hooks/useDerived';
 import { formatDate, useL } from '@/i18n';
 import { Icon } from '@/components/Icon';
 import { PageHeader } from '@/components/Layout';
+import { InstallRow } from '@/pwa/InstallPrompt';
 
 export function About() {
   const { t } = useTranslation();
@@ -23,6 +24,12 @@ export function About() {
       <PageHeader title={t('about.title')} subtitle={t('about.what')} />
 
       <section className="card p-4">
+        <h2 className="mb-1 font-bold">{t('install.title')}</h2>
+        <p className="mb-3 text-sm text-muted">{t('install.aboutHint')}</p>
+        <InstallRow />
+      </section>
+
+      <section className="card mt-4 p-4">
         <h2 className="mb-2 flex items-center gap-2 font-bold"><Icon name="lock" className="text-olive" />{t('about.privacy')}</h2>
         <p className="text-sm leading-relaxed text-muted">{t('profile.privacyLong')}</p>
       </section>

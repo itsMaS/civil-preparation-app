@@ -262,6 +262,18 @@ describe('migrations', () => {
     expect(res.changed).toBe(false);
     expect(res.changes).toEqual([]);
   });
+
+  it('drops avatar customisation from v1 data without announcing a pack change', () => {
+    const data = fresh();
+    data.schemaVersion = 1;
+    (data.profile as unknown as Record<string, unknown>).avatar = { skin: 'light', hair: 'bun', body: 'slim' };
+    const res = migrateUserData(data, pack, NOW);
+    expect(res.changed).toBe(true);
+    expect(res.packChanged).toBe(false);
+    expect(res.data.schemaVersion).toBe(2);
+    expect('avatar' in res.data.profile).toBe(false);
+    expect(res.data.profile.locale).toBe('en');
+  });
 });
 
 describe('context', () => {

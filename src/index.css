@@ -16,6 +16,8 @@
   --amber: #e0a52a;
   --green: #7fb069;
   --red: #d9534f;
+  --figure: #7d9455;
+  --figure-mark: #1e2228;
   --shadow: 0 8px 24px rgb(0 0 0 / 0.35);
   color-scheme: dark;
 }
@@ -34,6 +36,8 @@
   --amber: #c48d12;
   --green: #4f8a3a;
   --red: #c0392b;
+  --figure: #556a34;
+  --figure-mark: #f6f3ec;
   --shadow: 0 8px 24px rgb(30 30 20 / 0.12);
   color-scheme: light;
 }
@@ -89,16 +93,20 @@ body { margin: 0; min-height: 100dvh; -webkit-tap-highlight-color: transparent; 
 @keyframes rise { from { transform: translateY(12px); opacity: 0 } to { transform: translateY(0); opacity: 1 } }
 @keyframes confetti { 0% { transform: translateY(-10vh) rotate(0); opacity: 1 } 100% { transform: translateY(110vh) rotate(720deg); opacity: 0 } }
 @keyframes flicker { 0%, 100% { opacity: .9 } 50% { opacity: 1 } }
+@keyframes bounce { 0% { transform: scale(1, 1) } 25% { transform: scale(1.1, .88) } 55% { transform: translateY(-10px) scale(.96, 1.06) } 80% { transform: scale(1.03, .97) } 100% { transform: scale(1, 1) } }
 
+/* SVG groups animate around their own box, not the whole viewBox. */
+.anim-breathe, .anim-blink, .anim-fidget, .anim-bounce { transform-box: fill-box; }
 .anim-breathe { animation: breathe 3.2s ease-in-out infinite; }
-.anim-blink { transform-origin: center; animation: blink 4.5s ease-in-out infinite; }
-.anim-fidget { transform-origin: 50% 90%; animation: fidget 2.6s ease-in-out infinite; }
+.anim-blink { transform-origin: 50% 50%; animation: blink 4.5s ease-in-out infinite; }
+.anim-fidget { transform-origin: 50% 100%; animation: fidget 2.6s ease-in-out infinite; }
+.anim-bounce { transform-origin: 50% 100%; animation: bounce .6s cubic-bezier(.3, .8, .4, 1) both; }
 .anim-pop { animation: pop .35s cubic-bezier(.2,.9,.3,1.2) both; }
 .anim-rise { animation: rise .25s ease-out both; }
 .anim-flicker { animation: flicker 1.8s ease-in-out infinite; }
 
 @media (prefers-reduced-motion: reduce) {
-  .anim-breathe, .anim-blink, .anim-fidget, .anim-flicker { animation: none; }
+  .anim-breathe, .anim-blink, .anim-fidget, .anim-flicker, .anim-bounce { animation: none; }
   .anim-pop, .anim-rise { animation-duration: .01s; }
 }
 

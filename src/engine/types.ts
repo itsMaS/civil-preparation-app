@@ -182,18 +182,11 @@ export interface EntityInstance {
   fields: Record<string, FactRecord>;
 }
 
-export interface AvatarLook {
-  skin: string;
-  hair: string;
-  body: string;
-}
-
 export interface Profile {
   facts: Record<string, FactRecord>;
   entities: Record<string, EntityInstance[]>;
   /** entityList facts marked complete ("no more pets"). */
   listsDone: Record<string, boolean>;
-  avatar: AvatarLook;
   locale: Locale;
   theme: 'dark' | 'light';
 }

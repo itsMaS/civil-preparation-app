@@ -22,7 +22,7 @@ consequence in one line, then says what to do. No fear-mongering, no hedging.
 | **Entity** | A structured thing with its own fields: `person`, `pet`, `vehicle`. Lists of entities are facts of kind `entityList`. |
 | **Item** | Something to acquire, learn, do, or maintain. Global: one state per item id, shared across badges. |
 | **Requirement** | A badge's reference to an item, with an optional condition (`when`) and quantity formula. |
-| **Profile** | All facts + entities + avatar look + settings. Local only. |
+| **Profile** | All facts + entities + settings. Local only. |
 
 ### 2.1 The fact engine ("never ask twice")
 
@@ -66,10 +66,11 @@ Home "Needs attention" list. Framing is "check by", not "expired".
 ### 2.4 Avatar
 
 Pure function of user data (`src/avatar/Avatar.tsx`):
-- **Look**: skin, hair, body (chosen at onboarding, editable).
-- **Gear** layers: from satisfied items with a `gear` field.
-- **Mood**: uneasy / neutral / confident from earned ratio; decay drops it a notch.
-- **Cast**: household members and pets from entities, each with a covered/uncovered marker.
+- **Figure**: a generic monotone silhouette in the theme's figure colour. No customisation.
+- **Gear** layers: from satisfied items with a `gear` field, drawn in full colour on the silhouette.
+- **Mood**: uneasy / neutral / confident from earned ratio, shown in posture and a subtle face; decay drops it a notch.
+- **Cast**: household members and pets from entities, drawn in the same style at true relative scale (adults as tall as the user, children smaller), each with a covered/uncovered marker.
+- **Tap**: the figure bounces and the device buzzes where supported.
 - **Environment**: bare -> stocked (72h earned) -> fortified (outage or two-week earned).
 
 ### 2.5 Right now
@@ -112,7 +113,7 @@ See `docs/CONTENT.md` for the authoring guide.
 ## 5. Screens
 
 Home · Badge (intro -> survey -> confirm -> checklist) · Right now · Shelters ·
-Profile (entities, facts with "used by", My plan, avatar, language/theme,
+Profile (entities, facts with "used by", My plan, language/theme,
 export/import/delete) · About (privacy, what's new, sources, funding, share QR).
 
 ## 6. Stack
