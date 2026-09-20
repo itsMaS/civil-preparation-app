@@ -1,6 +1,6 @@
 import { evalBool, evalNumber } from './expr';
 import { buildContext } from './profile';
-import type { BadgeDef, BadgeProgress, ContentPack, ItemDef, ItemState, Profile, Requirement, UserData } from './types';
+import type { BadgeDef, BadgeProgress, ContentPack, ItemDef, ItemState, Requirement, UserData } from './types';
 
 export type BadgeStatus = 'not_started' | 'in_progress' | 'earned' | 'needs_attention';
 
