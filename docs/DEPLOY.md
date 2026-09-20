@@ -5,11 +5,33 @@ builds, and deploys to Pages on every push to `main`.
 
 ## One-time setup (you)
 
-1. On GitHub: **Settings -> Pages -> Build and deployment -> Source: GitHub Actions.**
-2. Push to `main` (or run the workflow manually from the Actions tab).
-3. The site appears at `https://itsmas.github.io/civil-preparation-app/`.
+1. **Unlock Actions.** The first run on 2026-09-20 failed with
+   "The job was not started because your account is locked due to a billing
+   issue." Go to GitHub -> your avatar -> **Settings -> Billing and plans**
+   and resolve the flagged payment method or overdue amount. Public repos are
+   free, but a locked account blocks Actions everywhere.
+2. **Settings -> General -> Default branch:** set to `main` (the first push
+   made `claude/brave-cerf-affdvf` the default).
+3. **Settings -> Pages -> Build and deployment -> Source: GitHub Actions.**
+4. **Actions tab -> "Test and deploy to GitHub Pages" -> Re-run** (or push to `main`).
+5. The site appears at `https://itsmas.github.io/civil-preparation-app/`.
 
-That is all. No secrets, no tokens.
+No secrets, no tokens.
+
+### Fallback without Actions
+
+If Actions stays unavailable, publish from your machine to a `gh-pages` branch:
+
+```
+npm ci && npm test && npm run build
+git checkout --orphan gh-pages && git rm -rf . -q
+cp -r dist/* . && cp dist/.nojekyll . 2>/dev/null; touch .nojekyll
+git add -A && git commit -m "Publish" && git push -f origin gh-pages
+git checkout main
+```
+
+Then set **Settings -> Pages -> Source: Deploy from a branch -> `gh-pages` / root**.
+Repeat for each release. Switch back to the Actions workflow once the account is unlocked.
 
 ## Base path
 
